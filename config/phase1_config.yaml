@@ -1,0 +1,35 @@
+database:
+  path: "data/fistula_rehab.db"
+
+data_generation:
+  n_synthetic_patients: 200
+  n_symptom_reports: 5000
+  noise_probability: 0.4
+  code_switch_probability: 0.15
+  rare_urgent_oversample: 0.20
+
+model:
+  type: "xgboost"
+  xgboost_params:
+    objective: "multi:softprob"
+    num_class: 3
+    max_depth: 6
+    learning_rate: 0.1
+    n_estimators: 100
+    scale_pos_weight_urgent: 5.0
+  distilbert_params:
+    pretrained: "distilbert-base-uncased"
+    epochs: 3
+    batch_size: 16
+    max_length: 128
+
+features:
+  text_embedding_model: "all-MiniLM-L6-v2"
+
+active_learning:
+  uncertainty_threshold: 0.7
+  batch_size: 20
+
+evaluation:
+  min_sensitivity_urgent: 0.95
+  max_false_negative_rate: 0.05
