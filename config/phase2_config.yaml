@@ -1,0 +1,55 @@
+# Module B Configuration - English Only
+chat:
+  intents: ["coping_request", "stigma_disclosure", "info_fistula", "peer_connection", "crisis", "greeting"]
+  language: "en"
+  n_samples: 10000
+  noise_probability: 0.3
+
+intent_model:
+  type: "xgboost"
+  xgboost_params:
+    objective: "multi:softprob"
+    num_class: 6
+    max_depth: 6
+    learning_rate: 0.1
+    n_estimators: 100
+    scale_pos_weight: [1.0, 1.5, 1.0, 1.0, 5.0, 1.0]  
+
+crisis_detection:
+  keywords:
+    - "kill"
+    - "die"
+    - "suicide"
+    - "end my life"
+    - "hurt myself"
+    - "self-harm"
+    - "want to die"
+    - "better off dead"
+    - "no reason to live"
+  confidence_threshold: 0.9
+
+phq9:
+  enabled: true
+  questions:
+    - "Little interest or pleasure in doing things? (0=not at all, 1=several days, 2=more than half the days, 3=nearly every day)"
+    - "Feeling down, depressed, or hopeless?"
+    - "Trouble falling or staying asleep, or sleeping too much?"
+    - "Feeling tired or having little energy?"
+    - "Poor appetite or overeating?"
+    - "Feeling bad about yourself – or that you are a failure?"
+    - "Trouble concentrating on things?"
+    - "Moving or speaking so slowly that others notice? Or the opposite – being so fidgety?"
+    - "Thoughts that you would be better off dead, or of hurting yourself?"
+  severity_thresholds:
+    minimal: 0
+    mild: 5
+    moderate: 10
+    moderately_severe: 15
+    severe: 20
+
+responses:
+  file: "data/responses_en.json"
+
+# Dialogue Manager settings
+dialogue:
+  confidence_threshold: 0.5   

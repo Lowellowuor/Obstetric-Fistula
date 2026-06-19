@@ -21,7 +21,6 @@ def train_xgboost():
     db_path = config['database']['path']
     db = DatabaseManager(db_path)
     
-    # Get training data
     df = db.get_training_data(min_confidence=0.0)
     logger.info(f"Training data size: {len(df)}")
     
@@ -29,10 +28,8 @@ def train_xgboost():
         logger.error("No training data found. Please run data generation first.")
         return None
     
-    # Ensure labels are integers (extra safety)
     df['label'] = df['label'].astype(int)
     
-    # Embed texts
     embedder = TextEmbedder(
         model_name=config['features']['text_embedding_model'], 
         cache_db_path=db_path
@@ -40,12 +37,10 @@ def train_xgboost():
     X = embedder.embed(df['raw_message'].tolist())
     y = df['label'].values
     
-    # Split with stratification
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=0.2, stratify=y, random_state=42
     )
     
-    # Cost‑sensitive weights (higher weight for urgent class = 2)
     scale_pos_weight = {0: 1.0, 1: 2.0, 2: config['model']['xgboost_params']['scale_pos_weight_urgent']}
     sample_weights = np.array([scale_pos_weight[label] for label in y_train])
     
@@ -80,7 +75,6 @@ def train_xgboost():
             "urgent_precision": safety['urgent_ppv'],
             "false_negative_rate": safety['false_negative_rate']
         })
-        # Save model
         joblib.dump(model, "models_artifacts/xgboost_model.pkl")
         mlflow.sklearn.log_model(model, "xgboost_model")
         logger.info(f"Model saved. Urgent recall: {safety['urgent_sensitivity']:.3f}")

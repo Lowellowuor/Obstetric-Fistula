@@ -1,0 +1,132 @@
+{
+  "greeting": {
+    "opening": [
+      "Hello! I'm here to support you. How are you feeling today?",
+      "Hi there. How can I help you?",
+      "Welcome. What's on your mind?",
+      "Good to see you. How is everything going?"
+    ],
+    "closing": [
+      "Take care. I'm always here if you need to talk.",
+      "Stay strong. You are not alone.",
+      "I hope you have a better day ahead."
+    ]
+  },
+  "coping_request": {
+    "opening": [
+      "It's okay to feel sad. Would you like to talk about what's worrying you?",
+      "Many women in your situation feel overwhelmed. Can you tell me more about what you're going through?",
+      "I'm here to listen. What's been the hardest part recently?",
+      "I understand that you're struggling. Would you like to share more?"
+    ],
+    "follow_up": {
+      "sadness": [
+        "It's natural to feel sad. Can you think of one small thing that brought you comfort today?",
+        "Let's practice a simple breathing exercise together: breathe in for 4, hold for 4, out for 4. How does that feel?",
+        "Sometimes writing down your feelings can help. Would you like to try that?"
+      ],
+      "anxiety": [
+        "Anxiety can be paralysing. Let's try to break things down. What's one thing you can control right now?",
+        "I hear you. Have you tried focusing on your breathing or taking a short walk?",
+        "Anxiety often comes from uncertainty. Could you talk to a trusted friend about your worries?"
+      ],
+      "hopelessness": [
+        "I'm sorry you feel that way. Remember, your feelings are valid, but they don't define your future. Many women go on to live fulfilling lives after fistula.",
+        "Would you like me to connect you with a counsellor who can help you work through these feelings?",
+        "It's okay to feel hopeless sometimes, but please know that there is always help available. Would you like to talk more?"
+      ]
+    },
+    "closing": [
+      "I hope that helps a little. Remember to be kind to yourself.",
+      "You are doing your best, and that's enough. Keep going.",
+      "If you need more support, I'm here."
+    ]
+  },
+  "stigma_disclosure": {
+    "opening": [
+      "I'm so sorry you're facing this. The shame is not yours to carry.",
+      "It must be incredibly hard to be treated that way. You deserve kindness and respect.",
+      "I hear you. Would you like to talk about how this is affecting your daily life?",
+      "That sounds really painful. I'm here to listen without judgement."
+    ],
+    "follow_up": {
+      "family": [
+        "It hurts when family doesn't understand. Have you tried talking to them about how you feel?",
+        "Sometimes families need education about fistula. Could a health worker help explain it to them?",
+        "I understand that family rejection is tough. Would you like some advice on how to approach them?"
+      ],
+      "community": [
+        "Stigma is real, but you are not defined by what others think. Would you like to connect with other survivors who support each other?",
+        "There are community support groups that can help you rebuild your social connections. Would you like more information?",
+        "I know it's hard, but many communities are becoming more accepting. Would you like to know about advocacy efforts?"
+      ]
+    },
+    "closing": [
+      "You are more than your condition. Remember that.",
+      "I believe in you. Many women have overcome this stigma and found their strength.",
+      "Keep your head up. You are valuable."
+    ]
+  },
+  "info_fistula": {
+    "opening": [
+      "I can provide some general information. What would you like to know?",
+      "Let me try to help. Do you have a specific question about recovery, surgery, or long‑term health?",
+      "I have some basic information. Keep in mind that I am an AI, and you should always consult a healthcare professional for personalised advice."
+    ],
+    "follow_up": {
+      "recovery": [
+        "Recovery takes time – usually 4‑6 weeks. It's important to stay hydrated and avoid heavy lifting.",
+        "Pelvic floor exercises can help. Have you been given any exercises by your physiotherapist?",
+        "Do you have a follow‑up appointment scheduled? It's important to monitor your progress."
+      ],
+      "surgery": [
+        "Most women have successful repairs. The success rate is high in specialised centres.",
+        "Do you have any specific concerns about the surgery? I can try to address them.",
+        "It's normal to have questions. Would you like to know more about the procedure?"
+      ],
+      "continence": [
+        "Many women achieve full continence, but it can take time. Some may experience occasional leakage, which can improve with pelvic floor therapy.",
+        "Are you currently experiencing leakage? It might be helpful to track your symptoms and discuss with your doctor.",
+        "There are products and exercises that can help with continence. Would you like more details?"
+      ]
+    },
+    "closing": [
+      "I hope that helps. If you have more questions, just ask.",
+      "Remember, your healthcare team is your best resource. Always follow their advice.",
+      "I'm here if you need any more information."
+    ]
+  },
+  "peer_connection": {
+    "opening": [
+      "Connecting with others can be powerful. Would you like to join a support group?",
+      "I can help you find other survivors. Where are you located (city/region)?",
+      "It's natural to want to talk to someone who understands. I can look for peer support options near you."
+    ],
+    "follow_up": {
+      "location": [
+        "I'll check for groups in your area. What is your nearest town or city?",
+        "There are online communities as well. Would you prefer face‑to‑face or virtual meetings?",
+        "I can provide contact details for local organisations. Would that be helpful?"
+      ],
+      "online": [
+        "I can share some Facebook groups and WhatsApp communities. Would you like me to provide links?",
+        "There are survivor networks across Africa. I can connect you with a regional organisation.",
+        "Online support can be very helpful. Would you like me to send you some trusted resources?"
+      ]
+    },
+    "closing": [
+      "I will provide you with contact details. Would you like that?",
+      "You are not alone. There are many women ready to welcome you.",
+      "I hope you find the support you need."
+    ]
+  },
+  "crisis": {
+    "opening": [
+      "I'm very concerned about you. Please reach out to a helpline immediately: 0800‑123‑456.",
+      "Your life is valuable. I am not a counsellor, but I can help you find one right now.",
+      "Please call this number for immediate support: 0800‑123‑456. You are not alone.",
+      "This is serious. Please contact a crisis hotline now."
+    ],
+    "closing": []
+  }
+}

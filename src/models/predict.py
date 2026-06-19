@@ -15,12 +15,11 @@ class TriagePredictor:
     
     def predict(self, patient_id: str, message: str, language: str = "en") -> dict:
         start_time = time.time()
-        # Insert report first (without prediction)
         report_data = {
             "patient_id": patient_id,
             "raw_message": message,
             "language": language,
-            "timestamp": None,  # auto
+            "timestamp": None,
             "predicted_class": None,
             "prediction_confidence": None,
             "human_review_class": None,
@@ -29,16 +28,13 @@ class TriagePredictor:
         }
         report_id = self.db.insert_symptom_report(report_data)
         
-        # Embed and predict
         emb = self.embedder.embed([message])[0].reshape(1, -1)
         proba = self.model.predict_proba(emb)[0]
         predicted_class = int(np.argmax(proba))
         confidence = float(np.max(proba))
         
-        # Update report with prediction
         self.db.update_prediction(report_id, predicted_class, confidence)
         
-        # Determine action
         if predicted_class == 2:
             action = "URGENT: Notify clinician immediately"
         elif predicted_class == 1:
@@ -46,7 +42,6 @@ class TriagePredictor:
         else:
             action = "Routine: Continue recovery"
         
-        # Log inference
         latency_ms = (time.time() - start_time) * 1000
         self.db.log_inference(report_id, "xgboost_v1", predicted_class, confidence, latency_ms)
         

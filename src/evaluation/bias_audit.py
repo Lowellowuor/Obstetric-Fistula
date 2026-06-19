@@ -13,8 +13,4 @@ def audit_bias(db_path: str, model_path: str):
     model = joblib.load(model_path)
     y_pred = model.predict(X)
     
-    # Group by language (we need language column; in synthetic we have it, but in real may not)
-    # For synthetic, we can join with reports table to get language
-    # Simplified: assume language column exists
-    # Actually we need to join with symptom_reports to get language. Skipping for brevity.
     print("Bias audit placeholder. Implement per-language metrics.")

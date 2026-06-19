@@ -5,8 +5,5 @@ import pandas as pd
 
 def detect_drift(db_path: str, reference_window_days: int = 30, current_window_days: int = 7):
     db = DatabaseManager(db_path)
-    # Query predictions from reference period and current period
-    # Simplified: assume we have inference_logs table with timestamps
-    # Placeholder
     print("Drift detection not yet implemented.")
     return {}

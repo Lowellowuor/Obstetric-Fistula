@@ -13,7 +13,6 @@ def run_training_pipeline():
     logger.info("Starting training pipeline")
     model = train_xgboost()
     
-    # Active learning after training
     sampler = UncertaintySampler(config['database']['path'], "models_artifacts/xgboost_model.pkl")
     uncertain = sampler.query_uncertain(batch_size=config['active_learning']['batch_size'])
     logger.info(f"Queued {len(uncertain)} reports for clinician review")

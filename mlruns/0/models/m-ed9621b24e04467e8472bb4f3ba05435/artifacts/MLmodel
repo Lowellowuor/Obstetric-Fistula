@@ -1,0 +1,23 @@
+artifact_path: file:///C:/Users/Administrator/Documents/fistula_phase1/mlruns/0/models/m-ed9621b24e04467e8472bb4f3ba05435/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.11.9
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.9.0
+    skops_trusted_types: null
+mlflow_version: 3.13.0
+model_id: m-ed9621b24e04467e8472bb4f3ba05435
+model_size_bytes: 456192
+model_uuid: m-ed9621b24e04467e8472bb4f3ba05435
+prompts: null
+run_id: 3fdd5a462f5d475fa2757cda50aa3de6
+utc_time_created: '2026-06-16 10:51:40.140746'
